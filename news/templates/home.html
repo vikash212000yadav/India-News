@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Vicky!</h1>
+
+    <div class="container">
+    <div class="row">
+        {% for x in api.articles %}
+            <div class="">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ x.urlToImage }}" class="card-img-top" alt="{{ x.source }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ x.title }}</h5>
+                        <p class="card-text">{{ x.content }}</p>
+                        <a href="{{ x.url }}" class="btn btn-primary">Read More...</a>
+                    </div>
+                </div>
+            <br>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+
+
+{% endblock %}
